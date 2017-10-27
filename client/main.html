@@ -1,0 +1,33 @@
+<head>
+  <title>myapp</title>
+</head>
+<body>
+ <div class="container">
+ <header>
+    <h1>My To-Do List</h1>
+    <form class="new-resolution">
+       <input type="text" name="title" placeholder="What is your plan">
+       <input type="submit" value="Submit" class="subbutton">
+    </form>
+ </header>
+   <ul>
+     {{#each reso}}
+       {{>resolution}}
+     {{/each}}
+  </ul>
+
+ </div>
+
+
+ 
+</body>
+
+<template name="resolution">
+  <li class="{{#if checked}}checked{{/if}}">
+  <input type="checkbox" checked="{{checked}}"  class="toggle-checked">
+  <span>{{title}}</span>
+      <button class="delete">Remove</button>
+  </li>
+   
+</template>
+
